@@ -177,6 +177,33 @@ a:hover { text-decoration: underline; }
   padding: 0.6rem 1.25rem;
 }
 
+.btn--outline {
+  background: transparent;
+  color: var(--clr-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: var(--clr-white);
+}
+
+/* ----- App Store Badge ----- */
+.app-store-badge {
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.app-store-badge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.app-store-badge img {
+  display: block;
+  height: 54px;
+  width: auto;
+}
+
 /* ----- Cards ----- */
 .card {
   background: var(--clr-card);

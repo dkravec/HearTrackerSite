@@ -30,14 +30,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
   <meta property="og:description" content="Log batteries, predict replacements, get local reminders. Works offline with no account required." />
-  <meta property="og:image" content="https://hear.trackerr.ca/assets/img/og-image.png" />
+  <meta property="og:image" content="https://hear.trackerr.ca/assets/img/app-icon.png" />
   <meta property="og:url" content="https://hear.trackerr.ca/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
   <meta name="twitter:description" content="Log batteries, predict replacements, get local reminders. Works offline." />
-  <meta name="twitter:image" content="https://hear.trackerr.ca/assets/img/og-image.png" />
+  <meta name="twitter:image" content="https://hear.trackerr.ca/assets/img/app-icon.png" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -88,7 +88,9 @@
         <h1 id="hero-heading" class="hero__headline">Never Get Surprised by a Dead Hearing-Aid Battery</h1>
         <p class="hero__sub">Track battery life, predict when replacements are due, and stay prepared — all on your device, no account required.</p>
         <div class="hero__ctas">
-          <a href="#APP_STORE_LINK" class="btn btn--primary">Get the iOS App</a>
+          <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+            <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
+          </a>
           <a href="#how-it-works" class="btn btn--secondary">See How It Works</a>
         </div>
       </div>
@@ -193,11 +195,11 @@
         <p class="section__sub">Clean, focused design that gets out of your way.</p>
 
         <div class="screenshots__carousel" role="region" aria-label="App screenshots" tabindex="0">
-          <img src="assets/img/screenshot-home.png" alt="HearTrackerr home screen showing current battery status" width="280" height="607" loading="lazy" />
-          <img src="assets/img/screenshot-log.png" alt="Battery log history view" width="280" height="607" loading="lazy" />
-          <img src="assets/img/screenshot-stats.png" alt="Battery statistics and predictions" width="280" height="607" loading="lazy" />
-          <img src="assets/img/screenshot-packs.png" alt="Battery inventory packs view" width="280" height="607" loading="lazy" />
-          <img src="assets/img/screenshot-settings.png" alt="Settings and notification preferences" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/home.png" alt="HearTrackerr home screen showing current battery status" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/log.png" alt="Battery log history view" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/stats.png" alt="Battery statistics and predictions" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/packs.png" alt="Battery inventory packs view" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/settings.png" alt="Settings and notification preferences" width="280" height="607" loading="lazy" />
         </div>
       </div>
     </section>
@@ -246,12 +248,25 @@
       </div>
     </section>
 
+    <!-- ==================== ACCESSIBILITY ==================== -->
+    <section id="accessibility" class="section" aria-labelledby="a11y-heading" hidden>
+      <div class="container callout">
+        <div class="callout__text">
+          <h2 id="a11y-heading" class="callout__heading">Designed with Accessibility in Mind</h2>
+          <p>HearTrackerr is built by someone who depends on hearing aids every day. The app supports Dynamic Type for larger text, works with VoiceOver screen reader, and uses high-contrast colors throughout. Every tap target is sized for comfort, and the interface keeps clutter to a minimum so you can find what you need fast.</p>
+        </div>
+        <div class="callout__icon" aria-hidden="true">♿</div>
+      </div>
+    </section>
+
     <!-- ==================== BOTTOM CTA ==================== -->
     <section class="section" aria-labelledby="cta-heading" style="text-align:center;">
       <div class="container">
         <h2 id="cta-heading" class="section__heading">Ready to Take Control?</h2>
         <p class="section__sub">Download HearTrackerr and stop worrying about dead batteries.</p>
-        <a href="#APP_STORE_LINK" class="btn btn--primary">Get the iOS App</a>
+        <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+          <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
+        </a>
       </div>
     </section>
 

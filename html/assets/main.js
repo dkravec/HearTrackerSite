@@ -30,7 +30,7 @@
     { href: "#features", text: "Features", class: "nav-link--text" },
     { href: "#how-it-works", text: "How It Works", class: "nav-link--text" },
     { href: "#faq", text: "FAQ", class: "nav-link--text" },
-    { href: "#APP_STORE_LINK", text: "Get the App", class: "btn btn--primary btn--small" }
+    { href: "#APP_STORE_LINK", text: "Get the App", class: "btn btn--outline btn--small" }
   ];
 
   var FOOTER_LINKS = [

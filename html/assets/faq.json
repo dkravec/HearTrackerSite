@@ -40,6 +40,11 @@
       "shown": true,
       "question": "Does my data sync across devices?",
       "answer": "If you have iCloud enabled, your data syncs automatically across all your Apple devices via CloudKit. This happens privately in the background using your own iCloud account — no third-party servers involved. If you prefer to keep everything on a single device, that works too."
+    },
+    {
+      "shown": true,
+      "question": "What are the system requirements?",
+      "answer": "HearTrackerr requires iOS 17 or later and runs on iPhone and iPad. iCloud sync requires an active iCloud account but is completely optional — the app works fully offline on a single device."
     }
   ]
 }
