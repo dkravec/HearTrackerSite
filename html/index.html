@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HearTrackerr – Never Get Surprised by a Dead Hearing-Aid Battery</title>
   <meta name="description" content="HearTrackerr helps hearing-aid users and caregivers track battery life, predict replacements, and stay prepared. Works offline, no account required." />
-  <meta name="theme-color" content="#0066ff" />
+  <meta name="theme-color" content="#0d0d12" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -44,7 +44,7 @@
   <!-- ==================== HEADER ==================== -->
   <header class="site-header" role="banner">
     <div class="container">
-      <a href="/" class="site-logo" aria-label="HearTrackerr home">HearTrackerr</a>
+      <a href="/" class="site-logo" aria-label="HearTrackerr home"><img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr</a>
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#features" class="nav-link--text">Features</a></li>
@@ -165,103 +165,35 @@
     </section>
 
     <!-- ==================== SOCIAL PROOF ==================== -->
-    <section id="reviews" class="section" aria-labelledby="reviews-heading">
+    <!-- Reviews are loaded from assets/reviews.json -->
+    <section id="reviews" class="section" aria-labelledby="reviews-heading" hidden>
       <div class="container">
         <h2 id="reviews-heading" class="section__heading">What People Are Saying</h2>
-        <p class="section__sub">Placeholder reviews — replace with real feedback from users.</p>
+        <p class="section__sub">Real feedback from hearing-aid users and caregivers.</p>
 
-        <div class="testimonials__grid">
-          <div class="testimonial">
-            <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial__quote">"I used to get caught with dead batteries at the worst times. HearTrackerr fixed that completely."</p>
-            <p class="testimonial__author">— Placeholder Reviewer</p>
-          </div>
-          <div class="testimonial">
-            <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial__quote">"Simple and does exactly what it says. I love that it works offline — no fuss."</p>
-            <p class="testimonial__author">— Placeholder Reviewer</p>
-          </div>
-          <div class="testimonial">
-            <div class="testimonial__stars" aria-label="4 out of 5 stars">★★★★☆</div>
-            <p class="testimonial__quote">"I manage my mother's hearing aids. This app makes it easy to stay on top of her battery changes."</p>
-            <p class="testimonial__author">— Placeholder Caregiver</p>
-          </div>
+        <div id="testimonials-grid" class="testimonials__grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY I BUILT THIS ==================== -->
+    <section id="story" class="section" aria-labelledby="story-heading">
+      <div class="container story">
+        <h2 id="story-heading" class="section__heading">Why I Built This</h2>
+        <div class="story__body">
+          <p>I'm deaf. I've worn hearing aids my entire life, and for years I dealt with the same frustrating problem — batteries dying at the worst possible moment. In the middle of a conversation, during a class, at work. Every time, it was the same scramble: do I have a spare? When did I last change these? How long do they usually last?</p>
+          <p>I looked for an app that could help me keep track. Something simple that would just tell me when my batteries were likely to go, and whether I had enough spares on hand. I couldn't find one that worked the way I needed it to — so I built my own.</p>
+          <p>HearTrackerr isn't made by a big company guessing what hearing-aid users might want. It's made by someone who actually depends on hearing aids every single day. Every feature exists because I needed it myself.</p>
         </div>
       </div>
     </section>
 
     <!-- ==================== FAQ ==================== -->
-    <section id="faq" class="section section--alt" aria-labelledby="faq-heading">
+    <!-- FAQ items are loaded from assets/faq.json -->
+    <section id="faq" class="section section--alt" aria-labelledby="faq-heading" hidden>
       <div class="container">
         <h2 id="faq-heading" class="section__heading">Frequently Asked Questions</h2>
 
-        <div class="faq__list">
-          <!-- Q1 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Does HearTrackerr require an internet connection?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>No. HearTrackerr is designed to work fully offline. All your data stays on your device.</p>
-            </div>
-          </div>
-
-          <!-- Q2 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Do I need to create an account?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>No. HearTrackerr is designed to work without an account. Open the app and start logging right away.</p>
-            </div>
-          </div>
-
-          <!-- Q3 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Are notifications required?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>Notifications are completely optional and local. They never leave your device. You can turn them on or off at any time.</p>
-            </div>
-          </div>
-
-          <!-- Q4 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>What data does the app collect?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>None leaves your device. Battery logs, inventory, and issue reports are stored locally. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
-            </div>
-          </div>
-
-          <!-- Q5 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Which hearing-aid battery sizes are supported?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>HearTrackerr works with any disposable hearing-aid battery — size 10, 13, 312, or 675. Just log when you start and when it dies.</p>
-            </div>
-          </div>
-
-          <!-- Q6 -->
-          <div class="faq-item">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Is HearTrackerr free?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-            <div class="faq-item__answer" hidden>
-              <p>Pricing details are available on the App Store. Check the listing for the latest information.</p>
-            </div>
-          </div>
-        </div>
+        <div id="faq-list" class="faq__list"></div>
       </div>
     </section>
 
@@ -279,10 +211,11 @@
   <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <span class="site-logo" style="color:#fff;">HearTrackerr</span>
+      <span class="site-logo"><img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr</span>
       <ul class="footer__links">
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="mailto:CONTACT_EMAIL">Contact</a></li>
+        <li><a href="https://novapro.net" target="_blank" rel="noopener">novapro.net</a></li>
       </ul>
       <p class="footer__copy">&copy; <span id="footer-year">2026</span> HearTrackerr. All rights reserved.</p>
     </div>

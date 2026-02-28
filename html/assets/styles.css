@@ -416,6 +416,25 @@ a:hover { text-decoration: underline; }
   margin-inline: auto;
 }
 
+/* ----- Story / Why I Built This ----- */
+.story {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.story__body p {
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--sp-4);
+  font-size: 1.0625rem;
+}
+
+.story__body p:last-child {
+  margin-bottom: 0;
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
 .faq-item {
   border-bottom: 1px solid var(--clr-border);
 }
