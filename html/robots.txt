@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://hear.trackerr.ca/sitemap.xml

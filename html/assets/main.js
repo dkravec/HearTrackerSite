@@ -1,15 +1,123 @@
 /* ============================================================
    HearTrackerr – Main JS
-   FAQ accordion · Smooth scroll · Reduced-motion aware
+   Nav/footer injection · FAQ accordion · Smooth scroll · JSON loaders
+   ============================================================
+   Each page has header & footer HTML shells with empty <ul> and <p>
+   elements. This script fills in nav links, footer links, and the
+   footer copyright line from one central definition — no fetch needed.
    ============================================================ */
 
 (function () {
   "use strict";
 
-  /* ----- FAQ accordion ----- */
-  const prefersReducedMotion = window.matchMedia(
+  var prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
+
+  /* ----- Resolve base path for JSON fetches ----- */
+  var scripts = document.getElementsByTagName("script");
+  var assetBase = "";
+  for (var i = 0; i < scripts.length; i++) {
+    var src = scripts[i].getAttribute("src") || "";
+    if (src.indexOf("main.js") !== -1) {
+      assetBase = src.replace("main.js", "");
+      break;
+    }
+  }
+
+  /* ----- Nav & footer link definitions (edit here to update all pages) ----- */
+  var NAV_LINKS = [
+    { href: "#features", text: "Features", class: "nav-link--text" },
+    { href: "#how-it-works", text: "How It Works", class: "nav-link--text" },
+    { href: "#faq", text: "FAQ", class: "nav-link--text" },
+    { href: "#APP_STORE_LINK", text: "Get the App", class: "btn btn--primary btn--small" }
+  ];
+
+  var FOOTER_LINKS = [
+    { href: "privacy/", text: "Privacy Policy" },
+    { href: "changelog/", text: "Changelog" },
+    { href: "mailto:daniel@dkravec.net", text: "Contact", absolute: true },
+    { href: "https://novapro.net", text: "novapro.net", absolute: true, external: true }
+  ];
+
+  var FOOTER_COPY = "&copy; " + new Date().getFullYear() + " HearTrackerr. All rights reserved.";
+
+  /* ----- Derive site root from script path ----- */
+  // assetBase is "assets/" from root or "../assets/" from sub-pages.
+  // Strip "assets/" to get the page-to-root prefix ("" or "../").
+  var siteRoot = assetBase.replace("assets/", "");
+
+  /* ----- Inject nav links ----- */
+  (function injectNavLinks() {
+    var ul = document.getElementById("nav-links");
+    if (!ul) return;
+
+    NAV_LINKS.forEach(function (link) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      // On sub-pages, anchor links become absolute (/#features) so they
+      // navigate back to the homepage. On the root page, keep bare #hash
+      // so the smooth-scroll handler still works.
+      a.href = link.href.charAt(0) === "#"
+        ? (siteRoot ? "/" + link.href : link.href)
+        : siteRoot + link.href;
+      a.textContent = link.text;
+      if (link.class) a.className = link.class;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })();
+
+  /* ----- Inject footer links ----- */
+  (function injectFooterLinks() {
+    var ul = document.getElementById("footer-links");
+    if (!ul) return;
+
+    FOOTER_LINKS.forEach(function (link) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = link.absolute ? link.href : siteRoot + link.href;
+      a.textContent = link.text;
+      if (link.external) {
+        a.target = "_blank";
+        a.rel = "noopener";
+      }
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })();
+
+  /* ----- Inject footer copy ----- */
+  (function injectFooterCopy() {
+    var p = document.getElementById("footer-copy");
+    if (!p) return;
+    p.innerHTML = FOOTER_COPY;
+  })();
+
+  /* ----- Shared helpers ----- */
+  function escapeHTML(str) {
+    var div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  /* ----- Smooth scroll (delegated — works for all anchor links) ----- */
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    var hash = link.getAttribute("href");
+    if (!hash || hash === "#" || hash.indexOf("#APP_STORE") === 0) return;
+
+    var target = document.querySelector(hash);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+      target.focus({ preventScroll: true });
+    }
+  });
 
   /* ----- FAQ accordion (delegated for dynamic items) ----- */
   function initFaqAccordion(container) {
@@ -18,68 +126,17 @@
       if (!btn) return;
 
       var item = btn.closest(".faq-item");
-      var answer = item.querySelector(".faq-item__answer");
       var isOpen = item.hasAttribute("open");
 
       if (isOpen) {
-        if (!prefersReducedMotion) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-          requestAnimationFrame(function () {
-            answer.style.maxHeight = "0";
-            answer.style.overflow = "hidden";
-          });
-          answer.addEventListener(
-            "transitionend",
-            function () {
-              item.removeAttribute("open");
-              btn.setAttribute("aria-expanded", "false");
-              answer.setAttribute("hidden", "");
-              answer.style.maxHeight = "";
-              answer.style.overflow = "";
-            },
-            { once: true }
-          );
-        } else {
-          item.removeAttribute("open");
-          btn.setAttribute("aria-expanded", "false");
-          answer.setAttribute("hidden", "");
-        }
+        item.removeAttribute("open");
+        btn.setAttribute("aria-expanded", "false");
       } else {
         item.setAttribute("open", "");
         btn.setAttribute("aria-expanded", "true");
-        answer.removeAttribute("hidden");
-        if (!prefersReducedMotion) {
-          answer.style.maxHeight = "0";
-          answer.style.overflow = "hidden";
-          requestAnimationFrame(function () {
-            answer.style.transition = "max-height 0.3s ease";
-            answer.style.maxHeight = answer.scrollHeight + "px";
-          });
-          answer.addEventListener(
-            "transitionend",
-            function () {
-              answer.style.maxHeight = "";
-              answer.style.overflow = "";
-              answer.style.transition = "";
-            },
-            { once: true }
-          );
-        }
       }
     });
   }
-
-  /* ----- Smooth scroll for anchor links (respects reduced-motion via CSS) ----- */
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      const target = document.querySelector(link.getAttribute("href"));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
-        target.focus({ preventScroll: true });
-      }
-    });
-  });
 
   /* ----- Reviews from JSON ----- */
   (function loadReviews() {
@@ -87,7 +144,7 @@
     var grid = document.getElementById("testimonials-grid");
     if (!section || !grid) return;
 
-    fetch("assets/reviews.json")
+    fetch(assetBase + "reviews.json")
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (!data.render) return;
@@ -119,7 +176,7 @@
     var list = document.getElementById("faq-list");
     if (!section || !list) return;
 
-    fetch("assets/faq.json")
+    fetch(assetBase + "faq.json")
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (!data.render) return;
@@ -138,7 +195,7 @@
                 '<line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
               "</svg>" +
             "</button>" +
-            '<div class="faq-item__answer" hidden>' +
+            '<div class="faq-item__answer">' +
               "<p>" + escapeHTML(faq.answer) + "</p>" +
             "</div>";
           list.appendChild(item);
@@ -150,15 +207,41 @@
       .catch(function () { /* silently hide section if JSON fails */ });
   })();
 
-  function escapeHTML(str) {
-    var div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
+  /* ----- Changelog from JSON ----- */
+  (function loadChangelog() {
+    var list = document.getElementById("changelog-list");
+    if (!list) return;
 
-  /* ----- Year in footer ----- */
-  var yearEl = document.getElementById("footer-year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+    fetch(assetBase + "changelog.json")
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.render) return;
+
+        var shown = data.entries.filter(function (e) { return e.shown; });
+        if (shown.length === 0) {
+          list.innerHTML = '<p style="color:var(--clr-text-muted)">No releases yet.</p>';
+          return;
+        }
+
+        shown.forEach(function (entry) {
+          var el = document.createElement("div");
+          el.className = "changelog-entry";
+
+          var changesHtml = entry.changes
+            .map(function (c) { return "<li>" + escapeHTML(c) + "</li>"; })
+            .join("");
+
+          el.innerHTML =
+            '<h2 class="changelog-entry__version">v' + escapeHTML(entry.version) + "</h2>" +
+            '<time class="changelog-entry__date" datetime="' + escapeHTML(entry.date) + '">' + escapeHTML(entry.date) + "</time>" +
+            "<ul>" + changesHtml + "</ul>";
+
+          list.appendChild(el);
+        });
+      })
+      .catch(function () {
+        list.innerHTML = '<p style="color:var(--clr-text-muted)">Could not load changelog.</p>';
+      });
+  })();
+
 })();

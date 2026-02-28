@@ -11,8 +11,9 @@
     3. Add real screenshot images to assets/img/ and update the
        <img> src attributes in the Screenshots section.
     4. Update OG image path (og:image) with your real domain.
-    5. Replace placeholder testimonials with real reviews.
+    5. Replace placeholder testimonials in assets/reviews.json.
     6. Update sitemap.xml with your real domain.
+    7. Update JSON-LD schema below with real App Store URL.
     ============================================================
   -->
   <meta charset="UTF-8" />
@@ -21,18 +22,45 @@
   <meta name="description" content="HearTrackerr helps hearing-aid users and caregivers track battery life, predict replacements, and stay prepared. Works offline, no account required." />
   <meta name="theme-color" content="#0d0d12" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/app-foreground.png" />
+  <link rel="apple-touch-icon" href="assets/img/app-foreground.png" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
   <meta property="og:description" content="Log batteries, predict replacements, get local reminders. Works offline with no account required." />
-  <meta property="og:image" content="https://yourdomain.com/assets/img/og-image.png" />
-  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://hear.trackerr.ca/assets/img/og-image.png" />
+  <meta property="og:url" content="https://hear.trackerr.ca/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
   <meta name="twitter:description" content="Log batteries, predict replacements, get local reminders. Works offline." />
-  <meta name="twitter:image" content="https://yourdomain.com/assets/img/og-image.png" />
+  <meta name="twitter:image" content="https://hear.trackerr.ca/assets/img/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HearTrackerr",
+    "description": "Track hearing-aid battery life, predict replacements, and manage inventory. Works offline, no account required.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "offers": {
+      "@type": "Offer",
+      "url": "#APP_STORE_LINK",
+      "priceCurrency": "USD",
+      "price": "0"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "NovaPro",
+      "url": "https://novapro.net"
+    }
+  }
+  </script>
 
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -41,17 +69,13 @@
   <!-- Skip link -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ==================== HEADER ==================== -->
   <header class="site-header" role="banner">
     <div class="container">
-      <a href="/" class="site-logo" aria-label="HearTrackerr home"><img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr</a>
+      <a href="/" class="site-logo" aria-label="HearTrackerr home">
+        <img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr
+      </a>
       <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="#features" class="nav-link--text">Features</a></li>
-          <li><a href="#how-it-works" class="nav-link--text">How It Works</a></li>
-          <li><a href="#faq" class="nav-link--text">FAQ</a></li>
-          <li><a href="#APP_STORE_LINK" class="btn btn--primary btn--small">Get the App</a></li>
-        </ul>
+        <ul id="nav-links" class="nav-links"></ul>
       </nav>
     </div>
   </header>
@@ -89,6 +113,20 @@
             <div class="card__icon" aria-hidden="true">📊</div>
             <h3 class="card__title">Usage Prediction</h3>
             <p class="card__text">See average battery life and know roughly when your current battery will need replacing.</p>
+          </div>
+
+          <!-- iCloud Sync -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">☁️</div>
+            <h3 class="card__title">iCloud Sync</h3>
+            <p class="card__text">Your data syncs automatically across all your Apple devices via iCloud. No extra servers, no third parties — just your own account.</p>
+          </div>
+
+          <!-- Multiple Hearing Aids -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">👂</div>
+            <h3 class="card__title">Multiple Hearing Aids</h3>
+            <p class="card__text">Track left, right, and backup devices independently. Each hearing aid gets its own log and battery history.</p>
           </div>
 
           <!-- Notifications -->
@@ -175,6 +213,17 @@
       </div>
     </section>
 
+    <!-- ==================== FOR CAREGIVERS ==================== -->
+    <section id="caregivers" class="section section--alt" aria-labelledby="caregivers-heading">
+      <div class="container callout">
+        <div class="callout__text">
+          <h2 id="caregivers-heading" class="callout__heading">Built for Caregivers, Too</h2>
+          <p>If you manage hearing aids for a parent, child, or patient, HearTrackerr gives you a clear picture of their battery usage. Track multiple devices, keep inventory in check, and log issues — all in one place. No more guessing, no more missed changes.</p>
+        </div>
+        <div class="callout__icon" aria-hidden="true">🤝</div>
+      </div>
+    </section>
+
     <!-- ==================== WHY I BUILT THIS ==================== -->
     <section id="story" class="section" aria-labelledby="story-heading">
       <div class="container story">
@@ -208,16 +257,13 @@
 
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <span class="site-logo"><img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr</span>
-      <ul class="footer__links">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="mailto:CONTACT_EMAIL">Contact</a></li>
-        <li><a href="https://novapro.net" target="_blank" rel="noopener">novapro.net</a></li>
-      </ul>
-      <p class="footer__copy">&copy; <span id="footer-year">2026</span> HearTrackerr. All rights reserved.</p>
+      <span class="site-logo">
+        <img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr
+      </span>
+      <ul id="footer-links" class="footer__links"></ul>
+      <p id="footer-copy" class="footer__copy"></p>
     </div>
   </footer>
 
