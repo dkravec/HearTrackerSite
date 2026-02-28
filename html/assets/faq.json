@@ -1,0 +1,50 @@
+{
+  "render": true,
+  "faqs": [
+    {
+      "shown": true,
+      "question": "Does HearTrackerr require an internet connection?",
+      "answer": "Not at all. HearTrackerr is built to work completely offline — your battery logs, inventory, and settings all live on your device. You can use every feature without Wi-Fi or cellular data. If you have iCloud enabled, your data will sync across your Apple devices automatically in the background, but that's entirely optional."
+    },
+    {
+      "shown": true,
+      "question": "Do I need to create an account?",
+      "answer": "No account, no email, no sign-up form. Just open the app and start logging. HearTrackerr is designed to get out of your way so you can focus on what matters. Your data is stored locally on your device from the moment you begin — no registration required."
+    },
+    {
+      "shown": true,
+      "question": "Are notifications required?",
+      "answer": "Notifications are completely optional. If you enable them, they're scheduled and delivered locally on your device — nothing is sent through external servers. You can turn them on or off at any time in the app or through iOS Settings. The app works perfectly fine without them."
+    },
+    {
+      "shown": true,
+      "question": "What data does the app collect?",
+      "answer": "HearTrackerr does not collect, transmit, or share any of your data. Everything — battery logs, pack inventory, issue reports, and preferences — stays on your device. There are no analytics, no tracking pixels, and no third-party services running in the background. You can read the full details in our Privacy Policy."
+    },
+    {
+      "shown": true,
+      "question": "Which hearing-aid battery sizes are supported?",
+      "answer": "HearTrackerr works with all standard disposable hearing-aid battery sizes: 10 (yellow), 13 (orange), 312 (brown), and 675 (blue). The app doesn't care about the size — it tracks when you start a battery and when it dies, so it works the same regardless of what you're using."
+    },
+    {
+      "shown": true,
+      "question": "Is HearTrackerr free?",
+      "answer": "HearTrackerr is available on the App Store. Check the listing for the most up-to-date pricing information. The goal is to keep it accessible to anyone who relies on hearing-aid batteries day to day — because this is a tool built out of real, personal need."
+    },
+    {
+      "shown": true,
+      "question": "Can I track multiple hearing aids?",
+      "answer": "Yes. You can add as many hearing aids as you need — left, right, or backups. Each one has its own battery log and history, so you can track them independently. This is especially useful for bilateral users or caregivers managing devices for someone else."
+    },
+    {
+      "shown": true,
+      "question": "Does my data sync across devices?",
+      "answer": "If you have iCloud enabled, your data syncs automatically across all your Apple devices via CloudKit. This happens privately in the background using your own iCloud account — no third-party servers involved. If you prefer to keep everything on a single device, that works too."
+    },
+    {
+      "shown": true,
+      "question": "What are the system requirements?",
+      "answer": "HearTrackerr requires iOS 17 or later and runs on iPhone and iPad. iCloud sync requires an active iCloud account but is completely optional — the app works fully offline on a single device."
+    }
+  ]
+}

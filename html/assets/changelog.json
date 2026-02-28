@@ -1,0 +1,20 @@
+{
+  "render": true,
+  "entries": [
+    {
+      "version": "1.0.0",
+      "date": "2025-01-15",
+      "shown": true,
+      "changes": [
+        "Initial release",
+        "Battery logging with start and end dates",
+        "Usage prediction and average battery life stats",
+        "iCloud sync across all your Apple devices",
+        "Support for multiple hearing aids (left, right, backup)",
+        "Local push notification reminders",
+        "Battery pack inventory tracking",
+        "Issue logging for defective or unusual batteries"
+      ]
+    }
+  ]
+}

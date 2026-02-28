@@ -1,0 +1,23 @@
+{
+  "render": false,
+  "reviews": [
+    {
+      "shown": true,
+      "name": "Dr. Martinez",
+      "stars": 5,
+      "message": "I used to get caught with dead batteries at the worst times. HearTrackerr fixed that completely."
+    },
+    {
+      "shown": true,
+      "name": "Sarah K.",
+      "stars": 5,
+      "message": "Simple and does exactly what it says. I love that it works offline — no fuss."
+    },
+    {
+      "shown": true,
+      "name": "James P.",
+      "stars": 4,
+      "message": "I manage my mother's hearing aids. This app makes it easy to stay on top of her battery changes."
+    }
+  ]
+}

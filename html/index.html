@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ============================================================
+    HearTrackerr – Marketing Site
+    ============================================================
+    CUSTOMIZE BEFORE DEPLOYING:
+    1. Replace APP_STORE_LINK with your actual App Store URL.
+    2. Replace CONTACT_EMAIL with your support email address.
+    3. Add real screenshot images to assets/img/ and update the
+       <img> src attributes in the Screenshots section.
+    4. Update OG image path (og:image) with your real domain.
+    5. Replace placeholder testimonials in assets/reviews.json.
+    6. Update sitemap.xml with your real domain.
+    7. Update JSON-LD schema below with real App Store URL.
+    ============================================================
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HearTrackerr – Never Get Surprised by a Dead Hearing-Aid Battery</title>
+  <meta name="description" content="HearTrackerr helps hearing-aid users and caregivers track battery life, predict replacements, and stay prepared. Works offline, no account required." />
+  <meta name="theme-color" content="#0d0d12" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/app-foreground.png" />
+  <link rel="apple-touch-icon" href="assets/img/app-foreground.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
+  <meta property="og:description" content="Log batteries, predict replacements, get local reminders. Works offline with no account required." />
+  <meta property="og:image" content="https://hear.trackerr.ca/assets/img/app-icon.png" />
+  <meta property="og:url" content="https://hear.trackerr.ca/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HearTrackerr – Smart Hearing-Aid Battery Tracking" />
+  <meta name="twitter:description" content="Log batteries, predict replacements, get local reminders. Works offline." />
+  <meta name="twitter:image" content="https://hear.trackerr.ca/assets/img/app-icon.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HearTrackerr",
+    "description": "Track hearing-aid battery life, predict replacements, and manage inventory. Works offline, no account required.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "offers": {
+      "@type": "Offer",
+      "url": "#APP_STORE_LINK",
+      "priceCurrency": "USD",
+      "price": "0"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "NovaPro",
+      "url": "https://novapro.net"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/" class="site-logo" aria-label="HearTrackerr home">
+        <img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr
+      </a>
+      <nav aria-label="Primary">
+        <ul id="nav-links" class="nav-links"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero section" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading" class="hero__headline">Never Get Surprised by a Dead Hearing-Aid Battery</h1>
+        <p class="hero__sub">Track battery life, predict when replacements are due, and stay prepared — all on your device, no account required.</p>
+        <div class="hero__ctas">
+          <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+            <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
+          </a>
+          <a href="#how-it-works" class="btn btn--secondary">See How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section id="features" class="section section--alt" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading" class="section__heading">Everything You Need</h2>
+        <p class="section__sub">Simple, focused tools to keep your hearing aids running and ready.</p>
+
+        <div class="features__grid">
+          <!-- Battery Logging -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🔋</div>
+            <h3 class="card__title">Battery Logging</h3>
+            <p class="card__text">Record when you open a new battery and when it dies. Build a history you can trust.</p>
+          </div>
+
+          <!-- Prediction -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">📊</div>
+            <h3 class="card__title">Usage Prediction</h3>
+            <p class="card__text">See average battery life and know roughly when your current battery will need replacing.</p>
+          </div>
+
+          <!-- iCloud Sync -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">☁️</div>
+            <h3 class="card__title">iCloud Sync</h3>
+            <p class="card__text">Your data syncs automatically across all your Apple devices via iCloud. No extra servers, no third parties — just your own account.</p>
+          </div>
+
+          <!-- Multiple Hearing Aids -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">👂</div>
+            <h3 class="card__title">Multiple Hearing Aids</h3>
+            <p class="card__text">Track left, right, and backup devices independently. Each hearing aid gets its own log and battery history.</p>
+          </div>
+
+          <!-- Notifications -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🔔</div>
+            <h3 class="card__title">Local Notifications</h3>
+            <p class="card__text">Optional reminders that stay on your device. No servers, no tracking — just helpful nudges.</p>
+          </div>
+
+          <!-- Inventory Packs -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">📦</div>
+            <h3 class="card__title">Inventory Packs</h3>
+            <p class="card__text">Track how many batteries you have in stock so you never run out unexpectedly.</p>
+          </div>
+
+          <!-- Issue Logging -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">📝</div>
+            <h3 class="card__title">Issue Logging</h3>
+            <p class="card__text">Note problems when they happen — feedback, dead on arrival, or unusual drain — for your own records.</p>
+          </div>
+
+          <!-- Notes Import -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">📥</div>
+            <h3 class="card__title">Notes Import</h3>
+            <p class="card__text">Already tracking in Notes or a spreadsheet? Import your data to get started quickly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="how-it-works" class="section" aria-labelledby="hiw-heading">
+      <div class="container">
+        <h2 id="hiw-heading" class="section__heading">How It Works</h2>
+        <p class="section__sub">Three steps. No accounts, no setup wizards.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__number" aria-hidden="true">1</div>
+            <h3 class="step__title">Log a Battery</h3>
+            <p class="step__text">Tap once when you pop in a fresh battery. That's it — the timer starts.</p>
+          </div>
+          <div class="step">
+            <div class="step__number" aria-hidden="true">2</div>
+            <h3 class="step__title">Track Over Time</h3>
+            <p class="step__text">HearTrackerr learns your usage pattern and shows you average battery life at a glance.</p>
+          </div>
+          <div class="step">
+            <div class="step__number" aria-hidden="true">3</div>
+            <h3 class="step__title">Stay Prepared</h3>
+            <p class="step__text">Get a heads-up before batteries die and keep your inventory in check.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREENSHOTS ==================== -->
+    <section id="screenshots" class="section section--alt" aria-labelledby="screenshots-heading">
+      <div class="container">
+        <h2 id="screenshots-heading" class="section__heading">See It in Action</h2>
+        <p class="section__sub">Clean, focused design that gets out of your way.</p>
+
+        <div class="screenshots__carousel" role="region" aria-label="App screenshots" tabindex="0">
+          <img src="assets/img/screenshots/home.png" alt="HearTrackerr home screen showing current battery status" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/log.png" alt="Battery log history view" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/stats.png" alt="Battery statistics and predictions" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/packs.png" alt="Battery inventory packs view" width="280" height="607" loading="lazy" />
+          <img src="assets/img/screenshots/settings.png" alt="Settings and notification preferences" width="280" height="607" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SOCIAL PROOF ==================== -->
+    <!-- Reviews are loaded from assets/reviews.json -->
+    <section id="reviews" class="section" aria-labelledby="reviews-heading" hidden>
+      <div class="container">
+        <h2 id="reviews-heading" class="section__heading">What People Are Saying</h2>
+        <p class="section__sub">Real feedback from hearing-aid users and caregivers.</p>
+
+        <div id="testimonials-grid" class="testimonials__grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== FOR CAREGIVERS ==================== -->
+    <section id="caregivers" class="section section--alt" aria-labelledby="caregivers-heading">
+      <div class="container callout">
+        <div class="callout__text">
+          <h2 id="caregivers-heading" class="callout__heading">Built for Caregivers, Too</h2>
+          <p>If you manage hearing aids for a parent, child, or patient, HearTrackerr gives you a clear picture of their battery usage. Track multiple devices, keep inventory in check, and log issues — all in one place. No more guessing, no more missed changes.</p>
+        </div>
+        <div class="callout__icon" aria-hidden="true">🤝</div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY I BUILT THIS ==================== -->
+    <section id="story" class="section" aria-labelledby="story-heading">
+      <div class="container story">
+        <h2 id="story-heading" class="section__heading">Why I Built This</h2>
+        <div class="story__body">
+          <p>I'm deaf. I've worn hearing aids my entire life, and for years I dealt with the same frustrating problem — batteries dying at the worst possible moment. In the middle of a conversation, during a class, at work. Every time, it was the same scramble: do I have a spare? When did I last change these? How long do they usually last?</p>
+          <p>I looked for an app that could help me keep track. Something simple that would just tell me when my batteries were likely to go, and whether I had enough spares on hand. I couldn't find one that worked the way I needed it to — so I built my own.</p>
+          <p>HearTrackerr isn't made by a big company guessing what hearing-aid users might want. It's made by someone who actually depends on hearing aids every single day. Every feature exists because I needed it myself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <!-- FAQ items are loaded from assets/faq.json -->
+    <section id="faq" class="section section--alt" aria-labelledby="faq-heading" hidden>
+      <div class="container">
+        <h2 id="faq-heading" class="section__heading">Frequently Asked Questions</h2>
+
+        <div id="faq-list" class="faq__list"></div>
+      </div>
+    </section>
+
+    <!-- ==================== ACCESSIBILITY ==================== -->
+    <section id="accessibility" class="section" aria-labelledby="a11y-heading" hidden>
+      <div class="container callout">
+        <div class="callout__text">
+          <h2 id="a11y-heading" class="callout__heading">Designed with Accessibility in Mind</h2>
+          <p>HearTrackerr is built by someone who depends on hearing aids every day. The app supports Dynamic Type for larger text, works with VoiceOver screen reader, and uses high-contrast colors throughout. Every tap target is sized for comfort, and the interface keeps clutter to a minimum so you can find what you need fast.</p>
+        </div>
+        <div class="callout__icon" aria-hidden="true">♿</div>
+      </div>
+    </section>
+
+    <!-- ==================== BOTTOM CTA ==================== -->
+    <section class="section" aria-labelledby="cta-heading" style="text-align:center;">
+      <div class="container">
+        <h2 id="cta-heading" class="section__heading">Ready to Take Control?</h2>
+        <p class="section__sub">Download HearTrackerr and stop worrying about dead batteries.</p>
+        <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+          <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <span class="site-logo">
+        <img src="assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTrackerr
+      </span>
+      <ul id="footer-links" class="footer__links"></ul>
+      <p id="footer-copy" class="footer__copy"></p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
