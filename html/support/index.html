@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – HearTracker</title>
+  <meta name="description" content="Get help with HearTracker. Setup tips, troubleshooting, and contact options." />
+  <meta name="theme-color" content="#0d0d12" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/img/app-foreground.png" />
+  <link rel="apple-touch-icon" href="../assets/img/app-foreground.png" />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/" class="site-logo" aria-label="HearTracker home">
+        <img src="../assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTracker
+      </a>
+      <nav aria-label="Primary">
+        <ul id="nav-links" class="nav-links"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container prose">
+      <h1>Support</h1>
+      <p>Need help with HearTracker? This page covers common setup steps and quick troubleshooting.
+      If you still need help, contact support and include your iOS version plus a short description of what happened.</p>
+
+      <h2>Quick Start</h2>
+      <ul>
+        <li>Add each hearing aid you want to track.</li>
+        <li>Log a battery when you insert a new one.</li>
+        <li>Use issue logs when a battery behaves unexpectedly.</li>
+        <li>Enable local notifications if you want reminders.</li>
+      </ul>
+
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li><strong>Notifications are not appearing:</strong> Check iOS Settings > Notifications > HearTracker and confirm alerts are allowed.</li>
+        <li><strong>Data is not syncing across devices:</strong> Confirm both devices are signed into the same Apple ID and iCloud Drive is enabled.</li>
+        <li><strong>Stats look incorrect:</strong> Verify battery logs have valid start and end dates and remove accidental duplicates.</li>
+        <li><strong>Import failed:</strong> Review note formatting and ensure dates are valid before retrying import.</li>
+      </ul>
+
+      <h2>Data and Privacy</h2>
+      <p>HearTracker is designed to keep your data on your device, with optional iCloud sync through your personal Apple account. For details, read the <a href="/privacy/">Privacy Policy</a>.</p>
+
+      <h2>Contact Support</h2>
+      <p>Email: <a href="mailto:daniel@dkravec.net">daniel@dkravec.net</a></p>
+      <p>Please include:</p>
+      <ul>
+        <li>Your device model and iOS version</li>
+        <li>The HearTracker app version</li>
+        <li>Steps to reproduce the issue</li>
+        <li>A screenshot if available</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <span class="site-logo">
+        <img src="../assets/img/app-icon.png" alt="" class="site-logo__icon" width="28" height="28" />HearTracker
+      </span>
+      <ul id="footer-links" class="footer__links"></ul>
+      <p id="footer-copy" class="footer__copy"></p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>

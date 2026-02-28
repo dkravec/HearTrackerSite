@@ -1,5 +1,5 @@
 /* ============================================================
-   HearTrackerr – Main JS
+   HearTracker – Main JS
    Nav/footer injection · FAQ accordion · Smooth scroll · JSON loaders
    ============================================================
    Each page has header & footer HTML shells with empty <ul> and <p>
@@ -34,13 +34,14 @@
   ];
 
   var FOOTER_LINKS = [
+    { href: "support/", text: "Support" },
     { href: "privacy/", text: "Privacy Policy" },
     { href: "changelog/", text: "Changelog" },
     { href: "mailto:daniel@dkravec.net", text: "Contact", absolute: true },
     { href: "https://novapro.net", text: "novapro.net", absolute: true, external: true }
   ];
 
-  var FOOTER_COPY = "&copy; " + new Date().getFullYear() + " HearTrackerr. All rights reserved.";
+  var FOOTER_COPY = "&copy; " + new Date().getFullYear() + " HearTracker. All rights reserved.";
 
   /* ----- Derive site root from script path ----- */
   // assetBase is "assets/" from root or "../assets/" from sub-pages.
