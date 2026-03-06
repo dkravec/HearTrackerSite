@@ -30,7 +30,7 @@
     { href: "#features", text: "Features", class: "nav-link--text" },
     { href: "#how-it-works", text: "How It Works", class: "nav-link--text" },
     { href: "#faq", text: "FAQ", class: "nav-link--text" },
-    { href: "#APP_STORE_LINK", text: "Get the App", class: "btn btn--outline btn--small" }
+    { href: "https://apps.apple.com/app/heartracker/id6759507667", text: "Get the App", class: "btn btn--outline btn--small", external: true }
   ];
 
   var FOOTER_LINKS = [
@@ -56,12 +56,16 @@
     NAV_LINKS.forEach(function (link) {
       var li = document.createElement("li");
       var a = document.createElement("a");
-      // On sub-pages, anchor links become absolute (/#features) so they
-      // navigate back to the homepage. On the root page, keep bare #hash
-      // so the smooth-scroll handler still works.
-      a.href = link.href.charAt(0) === "#"
-        ? (siteRoot ? "/" + link.href : link.href)
-        : siteRoot + link.href;
+      // Handle external links and anchors differently
+      if (link.external) {
+        a.href = link.href;
+        a.target = "_blank";
+        a.rel = "noopener";
+      } else {
+        a.href = link.href.charAt(0) === "#"
+          ? (siteRoot ? "/" + link.href : link.href)
+          : siteRoot + link.href;
+      }
       a.textContent = link.text;
       if (link.class) a.className = link.class;
       li.appendChild(a);
@@ -108,7 +112,7 @@
     if (!link) return;
 
     var hash = link.getAttribute("href");
-    if (!hash || hash === "#" || hash.indexOf("#APP_STORE") === 0) return;
+    if (!hash || hash === "#") return;
 
     var target = document.querySelector(hash);
     if (target) {

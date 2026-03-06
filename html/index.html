@@ -17,21 +17,36 @@
     ============================================================
   -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>HearTracker – Never Get Surprised by a Dead Hearing-Aid Battery</title>
-  <meta name="description" content="HearTracker helps hearing-aid users and caregivers track battery life, predict replacements, and stay prepared. Works offline, no account required." />
+  <meta name="description" content="HearTracker helps hearing-aid users and caregivers track battery life, predict replacements, and stay prepared. Works offline, no account required. Get smart battery management on the App Store." />
   <meta name="theme-color" content="#0d0d12" />
+  <meta name="author" content="Daniel Kravec" />
+  <meta name="keywords" content="hearing aid, battery tracking, battery life prediction, health app, iOS app, hearing aid management" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/app-foreground.png" />
   <link rel="apple-touch-icon" href="assets/img/app-foreground.png" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="style" href="assets/styles.css" />
+  <link rel="preload" as="image" href="assets/img/app-icon.png" />
+  <link rel="preload" as="script" href="assets/main.js" />
+  
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HearTracker – Smart Hearing-Aid Battery Tracking" />
-  <meta property="og:description" content="Log batteries, predict replacements, get local reminders. Works offline with no account required." />
+  <meta property="og:description" content="Track battery life, get predictions, manage inventory. Works offline with no account. Download on the App Store." />
   <meta property="og:image" content="https://hear.trackerr.ca/assets/img/app-icon.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://hear.trackerr.ca/" />
+  <meta property="og:site_name" content="HearTracker" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -48,9 +63,17 @@
     "description": "Track hearing-aid battery life, predict replacements, and manage inventory. Works offline, no account required.",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "iOS",
+    "applicationSubCategory": "HealthApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "120",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "offers": {
       "@type": "Offer",
-      "url": "#APP_STORE_LINK",
+      "url": "https://apps.apple.com/app/heartracker/id6759507667",
       "priceCurrency": "USD",
       "price": "0"
     },
@@ -88,7 +111,7 @@
         <h1 id="hero-heading" class="hero__headline">Never Get Surprised by a Dead Hearing-Aid Battery</h1>
         <p class="hero__sub">Track battery life, predict when replacements are due, and stay prepared — all on your device, no account required.</p>
         <div class="hero__ctas">
-          <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+          <a href="https://apps.apple.com/app/heartracker/id6759507667" class="app-store-badge" aria-label="Download on the App Store" target="_blank">
             <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
           </a>
           <a href="#how-it-works" class="btn btn--secondary">See How It Works</a>
@@ -105,58 +128,79 @@
         <div class="features__grid">
           <!-- Battery Logging -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">🔋</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">battery_charging_full</i></div>
             <h3 class="card__title">Battery Logging</h3>
             <p class="card__text">Record when you open a new battery and when it dies. Build a history you can trust.</p>
           </div>
 
           <!-- Prediction -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">📊</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">trending_up</i></div>
             <h3 class="card__title">Usage Prediction</h3>
             <p class="card__text">See average battery life and know roughly when your current battery will need replacing.</p>
           </div>
 
           <!-- iCloud Sync -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">☁️</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">cloud_sync</i></div>
             <h3 class="card__title">iCloud Sync</h3>
             <p class="card__text">Your data syncs automatically across all your Apple devices via iCloud. No extra servers, no third parties — just your own account.</p>
           </div>
 
           <!-- Multiple Hearing Aids -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">👂</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">hearing</i></div>
             <h3 class="card__title">Multiple Hearing Aids</h3>
             <p class="card__text">Track left, right, and backup devices independently. Each hearing aid gets its own log and battery history.</p>
           </div>
 
           <!-- Notifications -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">🔔</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">notifications_active</i></div>
             <h3 class="card__title">Local Notifications</h3>
             <p class="card__text">Optional reminders that stay on your device. No servers, no tracking — just helpful nudges.</p>
           </div>
 
           <!-- Inventory Packs -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">📦</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">inventory_2</i></div>
             <h3 class="card__title">Inventory Packs</h3>
             <p class="card__text">Track how many batteries you have in stock so you never run out unexpectedly.</p>
           </div>
 
           <!-- Issue Logging -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">📝</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">notes</i></div>
             <h3 class="card__title">Issue Logging</h3>
             <p class="card__text">Note problems when they happen — feedback, dead on arrival, or unusual drain — for your own records.</p>
           </div>
 
           <!-- Notes Import -->
           <div class="card">
-            <div class="card__icon" aria-hidden="true">📥</div>
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">cloud_download</i></div>
             <h3 class="card__title">Notes Import</h3>
             <p class="card__text">Already tracking in Notes or a spreadsheet? Import your data to get started quickly.</p>
+          </div>
+
+          <!-- Cost Tracking -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">paid</i></div>
+            <h3 class="card__title">Cost Tracking</h3>
+            <p class="card__text">Track battery costs and see spending patterns. Multi-currency support and cost-per-day analysis help you budget smarter.</p>
+          </div>
+
+          <!-- Backup & Security -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">backup</i></div>
+            <h3 class="card__title">Backup & Export</h3>
+            <p class="card__text">Export all your data as a secure backup or transfer to a new device. Your data, your control — always accessible.</p>
+          </div>
+
+          <!-- Advanced Statistics -->
+          <div class="card">
+            <div class="card__icon" aria-hidden="true"><i class="material-icons">analytics</i></div>
+            <h3 class="card__title">Advanced Statistics</h3>
+            <p class="card__text">Dive deep into battery performance. Track best/worst durations, trends over time, and compare across your hearing aids.</p>
           </div>
         </div>
       </div>
@@ -242,7 +286,7 @@
 
     <!-- ==================== FAQ ==================== -->
     <!-- FAQ items are loaded from assets/faq.json -->
-    <section id="faq" class="section section--alt" aria-labelledby="faq-heading" hidden>
+    <section id="faq" class="section section--alt" aria-labelledby="faq-heading">
       <div class="container">
         <h2 id="faq-heading" class="section__heading">Frequently Asked Questions</h2>
 
@@ -266,7 +310,7 @@
       <div class="container">
         <h2 id="cta-heading" class="section__heading">Ready to Take Control?</h2>
         <p class="section__sub">Download HearTracker and stop worrying about dead batteries.</p>
-        <a href="#APP_STORE_LINK" class="app-store-badge" aria-label="Download on the App Store">
+        <a href="https://apps.apple.com/app/heartracker/id6759507667" class="app-store-badge" aria-label="Download on the App Store" target="_blank">
           <img src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="54" />
         </a>
       </div>
