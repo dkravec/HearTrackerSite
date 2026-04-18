@@ -175,6 +175,16 @@
       .catch(function () { /* silently hide section if JSON fails */ });
   })();
 
+  /* ----- Swetrix Analytics Initialization ----- */
+  (function initSwetrix() {
+    if (typeof swetrix === "undefined") return;
+
+    swetrix.init('YalT6GVSsKxf', {
+      apiURL: 'https://api.trackerr.ca/analytics/backend/v1/log',
+    });
+    swetrix.trackViews();
+  })();
+
   /* ----- FAQ from JSON ----- */
   (function loadFaq() {
     var section = document.getElementById("faq");
