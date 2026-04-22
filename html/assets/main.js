@@ -180,7 +180,7 @@
     if (typeof swetrix === "undefined") return;
 
     swetrix.init('YalT6GVSsKxf', {
-      apiURL: 'https://api.trackerr.ca/analytics/backend/v1/log',
+      apiURL: 'https://analytics.novapro.net/analytics/backend/v1/log',
     });
     swetrix.trackViews();
   })();
