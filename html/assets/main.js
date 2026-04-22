@@ -176,14 +176,58 @@
   })();
 
   /* ----- Swetrix Analytics Initialization ----- */
-  (function initSwetrix() {
-    if (typeof swetrix === "undefined") return;
+  var SWETRIX_PROJECT_ID = "YalT6GVSsKxf";
+  var SWETRIX_API_URL = "https://analytics.novapro.net/backend/v1/log";
 
-    swetrix.init('YalT6GVSsKxf', {
-      apiURL: 'https://analytics.novapro.net/analytics/backend/v1/log',
+  function getSwetrixCurrentPage() {
+    return window.location.pathname || "/";
+  }
+
+  function getSwetrixPageSource() {
+    var params = new URLSearchParams(window.location.search);
+    var source = params.get("source") || params.get("utm_source");
+    if (source) return source;
+
+    if (!document.referrer) return undefined;
+
+    try {
+      return new URL(document.referrer).hostname.replace(/^www\./, "");
+    } catch (err) {
+      return undefined;
+    }
+  }
+
+  function initSwetrix() {
+    if (!window.swetrix || typeof window.swetrix.init !== "function") return;
+
+    window.swetrix.init(SWETRIX_PROJECT_ID, {
+      apiURL: SWETRIX_API_URL
     });
-    swetrix.trackViews();
-  })();
+    window.swetrix.trackViews({
+      callback: function (payload) {
+        if (!payload) return true;
+
+        if (!payload.pg) {
+          payload.pg = getSwetrixCurrentPage();
+        }
+
+        if (!payload.so) {
+          var pageSource = getSwetrixPageSource();
+          if (pageSource) {
+            payload.so = pageSource;
+          }
+        }
+
+        return payload;
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSwetrix, { once: true });
+  } else {
+    initSwetrix();
+  }
 
   /* ----- FAQ from JSON ----- */
   (function loadFaq() {
